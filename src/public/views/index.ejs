@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/public/css/style.css">
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "/libs/three/build/three.module.js",
+                    "OrbitControls": "/libs/three/examples/jsm/controls/OrbitControls.js",
+                    "GLTFLoader": "/libs/three/examples/jsm/loaders/GLTFLoader.js"
+                }
+            }
+        </script>
+
+        <title>UHA Museum</title>
+    </head>
+
+    <body>
+        <div id="side-controls">
+            <ul>
+                <% for(const model of modelsList) { %>
+                <li data-model="<%=model.path%>">
+                    <div class="img" data-img="/static/thumbnails/<%=model.thumbnail%>"></div>
+                    <span><%=model.name%></span>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <div id="core-wrapper">
+            <div id="model-viewer"></div>
+        </div>
+
+        <script type="module" src="/public/js/main.js"></script>
+        <script type="module" src="/public/js/imageLoader.js" async></script>
+    </body>
+
+</html>

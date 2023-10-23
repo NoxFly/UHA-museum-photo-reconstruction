@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#side-controls {
+    width: 300px;
+    min-width: 300px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+}
+
+#core-wrapper {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #ccc;
+}
+
+#model-viewer {
+    background: #000;
+    height: 100%;
+    width: 100%;
+}
+
+#side-controls ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#side-controls ul li {
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    width: 90%;
+}
+
+#side-controls ul li div {
+    border: 1px solid #555;
+    background: #333;
+    height: 150px;
+    margin-bottom: 5px;
+    transition: border-color .1s;
+}
+
+#side-controls ul li span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    display: block;
+    color: #aaa;
+    user-select: none;
+}
+
+#side-controls ul li:hover div {
+    border-color: #007FFF;
+}
+
+#side-controls ul li:hover div .image-loaded {
+    filter: brightness(100%);
+}
+
+#side-controls ul li div .image-loaded {
+    opacity: 0;
+    filter: brightness(80%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: center/cover no-repeat;
+    animation: imageAppear .2s forwards;
+    transition: filter .1s;
+}
+
+@keyframes imageAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
