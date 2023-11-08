@@ -31,6 +31,7 @@ body {
     box-sizing: border-box;
     opacity: 0;
     transition-duration: 1s;
+    overflow-y: auto;
 }
 
 #side-description h1 {
@@ -46,6 +47,10 @@ body {
     color: #444;
     text-align: justify;
     white-space: break-spaces;
+}
+
+#side-description a {
+    color: #007FFF;
 }
 
 #core-wrapper {

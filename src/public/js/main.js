@@ -16,7 +16,7 @@ $home?.querySelector('button')?.addEventListener('click', () => {
             transitionFromTo($loader, $gallery, () => {
                 Gallery.start();
             });
-        }, 0);
+        }, 1000); // add delay to simulate loading
     });
 });
 
