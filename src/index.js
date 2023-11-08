@@ -26,14 +26,12 @@ app.use('/static', express.static(__dirname + '/data'));
 const router = express.Router({ caseSensitive: true });
 
 router.get('/', (req, res) => {
-    const modelsList = getModels();
+    res.render('index');
+});
 
-    // if(req.query.modelIdx === undefined) {
-    //     res.redirect('/?modelIdx=0');
-    //     return;
-    // }
-
-    res.render('index', { modelsList });
+router.get('/models', (req, res) => {
+    const models = JSON.parse(fs.readFileSync(__dirname + '/data/models.json', 'utf8'));
+    res.json(models);
 });
 
 app.use(router);
@@ -56,7 +54,7 @@ function getModels() {
         .map(file => {
             const path = basename(file);
             const name = path.replace(/[_-]/g, ' ').substring(0, path.lastIndexOf('.'));
-            const thumbnail = path.replace(/\.[^.]+$/, '.jpg');
+            const thumbnail = path.replace(/\.[^.]+$/, '.png');
 
             return { path, thumbnail, name };
         });

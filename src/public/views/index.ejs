@@ -21,22 +21,35 @@
     </head>
 
     <body>
-        <div id="side-controls">
-            <ul>
-                <% for(const model of modelsList) { %>
-                <li data-model="<%=model.path%>">
-                    <div class="img" data-img="/static/thumbnails/<%=model.thumbnail%>"></div>
-                    <span><%=model.name%></span>
-                </li>
-                <% } %>
-            </ul>
-        </div>
-        <div id="core-wrapper">
-            <div id="model-viewer"></div>
-        </div>
+        <section id="loader" class="hidden">
+            <img src="/public/asset/loader.gif"/>
+        </section>
+
+        <section id="home">
+            <div id="home-content">
+                <img src="/public/asset/logo_uha.png" alt="UHA Museum Logo" height="200">
+                <h1>Museum</h1>
+                <p>Explore the campus 3D models</p>
+                <button id="home-btn-explore">Explore</button>
+            </div>
+        </section>
+
+        <section id="gallery" class="hidden">
+            <div id="side-controls">
+                <ul></ul>
+            </div>
+            <div id="core-wrapper">
+                <div id="model-viewer"></div>
+            </div>
+            <div id="side-description">
+                <div id="description-content">
+                    <h1 id="description-title"></h1>
+                    <pre id="description-text"></pre>
+                </div>
+            </div>
+        </section>
 
         <script type="module" src="/public/js/main.js"></script>
-        <script type="module" src="/public/js/imageLoader.js" async></script>
     </body>
 
 </html>
