@@ -83,6 +83,12 @@ export async function load() {
 
         $li.addEventListener('click', () => {
 
+            const $noSel = document.querySelector('.no-selection');
+
+            if($noSel) {
+                $noSel.classList.add('hidden');
+            }
+
             if(currentModel) {
                 scene.remove(currentModel);
             }

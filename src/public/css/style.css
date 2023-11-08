@@ -148,6 +148,21 @@ body {
     transition: filter .1s;
 }
 
+
+.no-selection {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #888;
+    font-size: 1.2em;
+}
+
+.no-selection.hidden {
+    display: none;
+}
+
 @keyframes imageAppear {
     from {
         opacity: 0;
@@ -247,10 +262,6 @@ section {
 }
 
 /* Gallery */
-
-#gallery {
-    
-}
 
 
 section.showing {
