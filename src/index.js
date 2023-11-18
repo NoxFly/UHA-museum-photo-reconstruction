@@ -1,3 +1,8 @@
+/**
+ * @copyright Copyrights (C) 2023 Dorian Thivolle - All rights reserved.
+ * @author Dorian Thivolle
+ */
+
 import fs from 'fs';
 import cors from 'cors';
 import express from 'express';

@@ -1,3 +1,8 @@
+/**
+ * @copyright Copyrights (C) 2023 Dorian Thivolle - All rights reserved.
+ * @author Dorian Thivolle
+ */
+
 export function loadImages($container=document.body) {
     $container.querySelectorAll('.img').forEach($img => {
         if($img.dataset.img === undefined) {

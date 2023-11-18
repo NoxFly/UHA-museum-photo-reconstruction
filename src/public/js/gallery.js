@@ -1,3 +1,8 @@
+/**
+ * @copyright Copyrights (C) 2023 Dorian Thivolle - All rights reserved.
+ * @author Dorian Thivolle
+ */
+
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 import { GLTFLoader } from 'GLTFLoader';

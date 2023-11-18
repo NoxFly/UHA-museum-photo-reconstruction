@@ -1,3 +1,8 @@
+/**
+ * @copyright Copyrights (C) 2023 Dorian Thivolle - All rights reserved.
+ * @author Dorian Thivolle
+ */
+
 import * as Gallery from './gallery.js';
 import * as ImageLoader from './imageLoader.js';
 
